@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_eretail_sync_log_tree" model="ir.ui.view">
+        <field name="name">eretail.sync.log.tree</field>
+        <field name="model">eretail.sync.log</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="result=='ok'" decoration-warning="result=='warning'" decoration-danger="result=='error'">
+                <field name="create_date"/>
+                <field name="product_id"/>
+                <field name="eretail_goods_code"/>
+                <field name="sync_type"/>
+                <field name="result"/>
+                <field name="eretail_response" width="50%"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_eretail_sync_log" model="ir.actions.act_window">
+        <field name="name">Log de Sincronización eRetail</field>
+        <field name="res_model">eretail.sync.log</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_eretail_sync_log_tree"/>
+    </record>
+</odoo>

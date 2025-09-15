@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_eretail_product_link_tree" model="ir.ui.view">
+        <field name="name">eretail.product.link.tree</field>
+        <field name="model">eretail.product.link</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="eretail_sync_status=='synced'" decoration-warning="eretail_sync_status=='pending'" decoration-danger="eretail_sync_status=='error'">
+                <field name="product_id"/>
+                <field name="eretail_goods_code"/>
+                <field name="eretail_last_sync"/>
+                <field name="eretail_sync_status"/>
+                <button name="action_retry_sync" string="Reintentar" type="object" icon="fa-play"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_eretail_product_link" model="ir.actions.act_window">
+        <field name="name">Panel de Control eRetail</field>
+        <field name="res_model">eretail.product.link</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_eretail_product_link_tree"/>
+    </record>
+</odoo>

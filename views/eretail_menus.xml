@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_eretail_root"
+        name="eRetail"
+        sequence="50"/>
+
+    <menuitem id="menu_eretail_dashboard"
+        name="Panel de Control"
+        parent="menu_eretail_root"
+        action="action_eretail_product_link"
+        sequence="10"/>
+
+    <menuitem id="menu_eretail_logs"
+        name="Logs"
+        parent="menu_eretail_root"
+        action="action_eretail_sync_log"
+        sequence="20"/>
+</odoo>
